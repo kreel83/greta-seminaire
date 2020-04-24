@@ -23,14 +23,15 @@ class RequeteController extends AbstractController
 {
 
     /**
-     * @Route ("/webHook", name="webHook")
-     * @param Request $request
-     */
-    public function webHook(Request $request)
-    {
-        $c = exec("test.bat");
-        return new Response($c);
-    }
+    *@Route("/webHook", name="webHook")
+    */
+    public function webHook() {
+       $contents = file_get_contents('deploy.sh');
+       echo shell_exec($contents);
+       //echo shell_exec('sh deploy.sh');
+       //exec("touch jeSuisBinNotifier.txt");
+       return new Response($contents);
+     }
 
 
     /**
