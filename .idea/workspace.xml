@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="14b5ccb6-89d9-467f-8db6-31fbada082c0" name="Default" comment="" />
+    <list default="true" id="14b5ccb6-89d9-467f-8db6-31fbada082c0" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,11 +44,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="deploy.sh" pinned="false" current-in-tab="true">
+      <file leaf-file-name="deploy.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/deploy.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="22">
               <caret line="1" column="8" lean-forward="true" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -74,15 +85,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="594">
               <caret line="27" selection-start-line="27" selection-end-line="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cours.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/requete/cours.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="19" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -173,6 +175,7 @@
         <option value="$PROJECT_DIR$/public/css/datepicker.css" />
         <option value="$PROJECT_DIR$/public/test.bat" />
         <option value="$PROJECT_DIR$/src/Controller/RequeteController.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -390,15 +393,16 @@
       <workItem from="1587450530839" duration="26888000" />
       <workItem from="1587537364281" duration="14086000" />
       <workItem from="1587624080533" duration="2874000" />
-      <workItem from="1587710744958" duration="3863000" />
+      <workItem from="1587710744958" duration="3895000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57361000" />
+    <option name="totallyTimeSpent" value="57393000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="974" height="1057" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -410,10 +414,10 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.35511982" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.35511982" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30688936" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30688936" />
       <window_info anchor="right" id="Database" order="3" visible="true" weight="0.25574112" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -437,13 +441,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/requete/voirLeTheme.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="53" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
@@ -738,6 +735,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
           <caret line="1" column="8" lean-forward="true" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
         </state>
       </provider>
     </entry>
