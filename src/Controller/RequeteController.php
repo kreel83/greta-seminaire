@@ -12,13 +12,27 @@ use App\Form\SeminaireType;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Repository\RepositoryFactory;
 use Doctrine\Persistence\ManagerRegistry;
+
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class RequeteController extends AbstractController
 {
+
+    /**
+     * @Route ("/webHook", name="webHook")
+     * @param Request $request
+     */
+    public function webHook(Request $request)
+    {
+        $c = exec("test.bat");
+        return new Response($c);
+    }
+
+
     /**
      * @Route("/TousProjets", name="TousProjets")
      */
@@ -127,7 +141,7 @@ class RequeteController extends AbstractController
     }
 
     /**
-     * @Route("/seminaireNbInscrits", name="seminaireNbInscrits")
+     * @Route("/", name="seminaireNbInscrits")
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function seminaireNbInscrits(EntityManagerInterface $em) {
