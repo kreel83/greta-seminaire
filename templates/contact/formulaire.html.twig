@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello RequeteController!{% endblock %}
+
+{% block body %}
+    {% for message in app.flashes('notice') %}
+        <div class="alert alert-success flash-notice">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    {{  form_start(form) }}
+    {{ form_widget(form) }}
+
+    {{ form_end(form) }}
+{% endblock %}
+
+{% block javascripts %}
+
+    <script src="js/jquery.js"></script>
+    <script src="js/datepicker.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $('.datepicker').datepicker({
+                format: 'yyyy-mm-dd'
+            });
+        });
+    </script>
+{% endblock %}

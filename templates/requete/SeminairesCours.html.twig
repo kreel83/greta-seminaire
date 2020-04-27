@@ -5,11 +5,23 @@
     {% if seminaires == [] %}
         <p>Aucun seminaires trouvé</p>
     {% else %}
-        <ul>
+        <h3>Liste des séminaires</h3>
             {% for seminaire in seminaires %}
-                {% set d = '+' ~ (seminaire.cours.nbJours - 1) ~ ' day'%}
-                <li>id Seminaire : {{ seminaire.id }} Cours : {{ seminaire.cours.id }} - {{ seminaire.cours.libelleCours }} - debut : {{ seminaire.dateDebutSeminaire |date("d/m/Y") }} - fin: {{ seminaire.dateDebutSeminaire |date_modify(d)|date("d/m/Y") }} --- nbJour : {{  seminaire.cours.nbJours }}</li>
+                {% set d = '+' ~ (seminaire.cours.nbJours - 1) ~ ' day' %}
+
+                <table class="table table-bordered mt-3">
+                    <tr>
+                        <td>seminaire n° {{ seminaire.id }}</td>
+                        <td colspan="2">{{ seminaire.cours.id }} - {{ seminaire.cours.libelleCours }}</td>
+                    </tr>
+                    <tr>
+                        <td>debut : {{ seminaire.dateDebutSeminaire |date("d/m/Y") }}</td>
+                        <td>fin : {{ seminaire.dateDebutSeminaire |date_modify(d)|date("d/m/Y") }}</td>
+                        <td>nb jours : {{ seminaire.cours.nbJours }}</td>
+                    </tr>
+
+                </table>
             {% endfor %}
-        </ul>
+
     {% endif %}
 {% endblock %}

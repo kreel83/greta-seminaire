@@ -13,6 +13,8 @@ use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Repository\RepositoryFactory;
 use Doctrine\Persistence\ManagerRegistry;
 
+use Dompdf\Dompdf;
+use Dompdf\Options;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -113,7 +115,7 @@ class RequeteController extends AbstractController
 
 
     /**
-     * @Route("/SeminairesCours", name="SeminairesCours")
+     * @Route("/", name="SeminairesCours")
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function SeminairesCours() {
@@ -122,6 +124,33 @@ class RequeteController extends AbstractController
         return $this->render("requete/SeminairesCours.html.twig", [
             'seminaires' => $seminaires
         ]);
+    }
+
+
+    /**
+     * @Route("/SeminairesCoursPDF", name="SeminairesCoursPDF")
+     * @return \Symfony\Component\HttpFoundation\Response
+     *
+     */
+    public function SeminairesCoursPDF() {
+
+        $seminaires = $this->getDoctrine()->getRepository(Seminaire::class)->getSeminairesCours();
+        $pdfOptions = new Options();
+        $pdfOptions->set('defaultFont', 'Arial');
+        $dompdf = new Dompdf($pdfOptions);
+
+        $html = $this->render("requete/SeminairesCours.html.twig", [
+            'seminaires' => $seminaires
+        ]);
+        $dompdf->loadHtml($html);
+        $dompdf->setPaper('A4', 'portrait');
+        $dompdf->render();
+        $output = $dompdf->output();
+        $pdfFilepath =  'file/listeSeminaire.pdf';
+        file_put_contents($pdfFilepath, $output);
+        return new Response('PDF généré');
+
+
     }
 
     /**
@@ -142,7 +171,7 @@ class RequeteController extends AbstractController
     }
 
     /**
-     * @Route("/", name="seminaireNbInscrits")
+     * @Route("/seminaireNbInscrits", name="seminaireNbInscrits")
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function seminaireNbInscrits(EntityManagerInterface $em) {
