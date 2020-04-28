@@ -27,7 +27,7 @@ class ContactController extends AbstractController
             $e->persist($contact);
             $e->flush();
             $this->addFlash('notice','Votre demande a bien été envoyé');
-            $this->forward('App\Controller\RequeteController::SeminairesCoursPDF');
+            //$this->forward('App\Controller\RequeteController::SeminairesCoursPDF');
             $mailer->sendmail($contact->getMail());
 
             return $this->redirectToRoute('envoyerContact', ["id" => $contact->getId()]);

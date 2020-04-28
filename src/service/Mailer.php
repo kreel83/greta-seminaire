@@ -20,12 +20,11 @@ class Mailer {
         $message = (new \Swift_Message('hell from Email'))
             ->setContentType('text/html')
             ->setFrom('marc.borgna@gmail.com')
-            ->setTo($to)
-            ->attach(\Swift_Attachment::fromPath('file/listeSeminaire.pdf')->setFilename('listeSeminaire.pdf'));
+            ->setTo('marc.borgna@gmail.com');
+            //->attach(\Swift_Attachment::fromPath('file/listeSeminaire.pdf')->setFilename('listeSeminaire.pdf'));
         $img = $message->embed(\Swift_Image::fromPath('build/logo.png'));
-        $message->setBody($this->environment->render('emails/registration.html.twig', [
-            'img' => $img
-        ]));
+        $message->setBody($this->environment->render('emails/registration.html.twig', ['img' => $img]));
+	$message->setBody('coucou');
         $this->mailer->send($message);
 
     }
