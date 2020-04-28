@@ -23,26 +23,15 @@ class ContactController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $contact = $form->getData();
             $e = $doctrine->getManager();
-            $date = new \DateTime();
-            $contact->setDateHeureContact($date);
+            $contact->setDateHeureContact(new \DateTime());
             $e->persist($contact);
             $e->flush();
-            $this->addFlash(
-                'notice',
-                'Votre demande a bien été envoyé'
-            );
-            $body = $this->renderView(
-                'emails/registration.html.twig'
-            );
+            $this->addFlash('notice','Votre demande a bien été envoyé');
             $this->forward('App\Controller\RequeteController::SeminairesCoursPDF');
-
-            $mailer->sendmail($body, $contact->getMail());
-
+            $mailer->sendmail($contact->getMail());
 
             return $this->redirectToRoute('envoyerContact', ["id" => $contact->getId()]);
         }
-        return $this->render('contact/formulaire.html.twig', [
-            'form' => $form->createView()
-        ]);
+        return $this->render('contact/formulaire.html.twig', ['form' => $form->createView()]);
     }
 }

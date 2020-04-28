@@ -1,0 +1,16 @@
+easy_admin:
+    entities:
+        # List the entity class name you want to manage
+        - App\Entity\Contact
+        - App\Entity\Projet
+        - App\Entity\Cours
+        - App\Entity\Employe
+        - App\Entity\Certification
+        - App\Entity\ObtenirCertification
+        - App\Entity\Seminaire
+        - App\Entity\Theme
+
+    design:
+        assets:
+             css:
+                  - 'bundles/app/css/custom_admin.css'

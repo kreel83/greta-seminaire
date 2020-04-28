@@ -6,6 +6,10 @@
         <p>Aucun seminaires trouvé</p>
     {% else %}
         <h3>Liste des séminaires</h3>
+        <div class="mt-4">
+            <img width="200px;" src="build/logo.png" alt="Mon logo">
+        </div>
+
             {% for seminaire in seminaires %}
                 {% set d = '+' ~ (seminaire.cours.nbJours - 1) ~ ' day' %}
 

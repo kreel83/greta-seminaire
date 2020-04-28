@@ -1,0 +1,6 @@
+@import "page1/page1.css";
+@import "page2/page2.css";
+
+body {
+    background-color: lightgray;
+}
